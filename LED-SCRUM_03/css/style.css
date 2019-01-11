@@ -1,0 +1,263 @@
+/* Réglage de base pour tout le site */
+
+body{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  font-family: arial;
+  color: white;
+
+}
+h1,h2, h3, h4 {
+  font-family: 'advanced_led_board-7regular', Arial, sans-serif;
+  text-align: center;
+}
+header{
+  height: 20vh;
+}
+.view{
+  position: absolute;
+  display: inline-flex;
+  top:0;
+  left:0;
+}
+#view, #index{
+  margin: 0px 10px;
+}
+.hidden{
+  visibility: hidden;
+}
+.logo{
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 25px;
+  width: 200px;
+}
+.logo1{
+  position: absolute;
+  left: calc(50% - 125px);
+  width: 250px;
+}
+p{
+   margin:0px;
+}
+.petit{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+/* Réglage du média (moniteur) */
+
+
+/*
+PENSER A FAIRE BOUTON DE Z-INDEX
+*/
+
+.screen{
+  display: block;
+  background-color: black;
+  background-size: contain;
+  position:fixed;
+  top:155px;
+  left:0px;
+  width:1920px;
+  height:84px;
+  border:0;
+  transition: 0.5s;
+  border: 2px solid rgb(0,255,255);
+  box-shadow: 0 0 10px 5px rgb(0,255,255);
+  z-index: 0;
+}
+.promo{
+  position: absolute;
+  background-image: url(../images/logo-LEDSCRUM.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+.screen-off{
+  display: none;
+}
+.content-j{
+  width: 50%;
+}
+.joueur1{
+  position: absolute;
+  left: 0px;
+  background-color: blue;
+  width: 10%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 2;
+}
+.joueur2{
+  position: absolute;
+  right: 0px;
+  background-color: red;
+  width: 10%;
+  height: 100%;
+  z-index: 2;
+}
+.admin{
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 1;
+
+}
+.reglage{
+  margin-top: 15vh;
+  width: 30vw;
+  height: auto;
+  padding: 20px 0px;
+  background-color: black;
+  border: 2px solid rgb(0,255,255);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* Gestion des commandes du SCREEN */
+
+input[type=number]{
+  background-color: black;
+  border-style: none;
+  border: 2px solid rgb(0,255,255);
+  margin:0px;
+  padding: 3px;
+  width: 20%;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  transition: 0.1s;
+}
+input[type=number]:hover{
+  box-shadow: 0 0 5px 2px rgb(0,255,255);
+}
+input[type=color], input[type=file]{
+  background-color: black;
+  border-style: none;
+  border: 2px solid rgb(0,255,255);
+  margin:0 10px;
+  padding: 3px;
+  width: 33%;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  transition: 0.1s;
+}
+input[type=text]:hover{
+  box-shadow: 0 0 5px 2px rgb(0,255,255);
+}
+input[type=file]{
+  width: 75%;
+}
+.inline{
+  text-align:center;
+}
+
+/* Gestion du bouton SCREEN */
+
+button{
+  display: block;
+  background-color: black;
+  border-style: none;
+  background-color: rgb(0,255,255);
+  border: 2px solid rgb(0,255,255);
+  margin-left: calc(50% - 12px);
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: white;
+  transition: 0.1s;
+}
+button:hover{
+  box-shadow: 0 0 5px 2px rgb(0,255,255);
+}
+.active{
+  background-color: black;
+}
+.centre{
+  text-align: center;
+}
+
+/* CSS dédier aux portables */
+
+body.phone{
+
+}
+
+#login, .play{
+  position:relative;
+  top: calc(50% - 50px);
+  padding: 10vh 20px ;
+  color: rgb(0,255,255);
+  height: 50vh;
+  /* penser à le remettre à 100vw */
+  transition: 0.5s;
+}
+
+.log{
+  background-color: black;
+  border-style: none;
+  border: 2px solid rgb(0,255,255);
+  padding: 5px;
+  width: 250px;
+  height: auto;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  transition: 0.1s;
+}
+#recv_message{
+  background-color: black;
+  border-style: none;
+  border: 2px solid rgb(0,255,255);
+  margin: 20px auto;
+  padding: 10px;
+  width: 250px;
+  height: auto;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  transition: 0.1s;
+}
+input[type=submit], #message, #send-data{
+  display: block;
+  background-color: black;
+  border-style: none;
+  border: 2px solid rgb(0,255,255);
+  margin-left: calc(50% - 100px);
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  color: white;
+  transition: 0.1s;
+}
+
+
+
+
+
+
+
+.media{
+
+}
+.jeu{
+
+}
+.bdd{
+
+}

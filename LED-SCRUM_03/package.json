@@ -1,0 +1,14 @@
+{
+  "name": "led-scrum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wsserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^6.1.2"
+  }
+}

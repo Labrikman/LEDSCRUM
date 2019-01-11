@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+  <script src="js/script.js"></script>
+  <title>LED SCRUM SCREEN</title>
+</head>
+<header>
+  <div class="logo1">
+    <img src="images\logo-LEDSCRUM.png" alt="logo led scrum" class="logo">
+  </div>
+</header>
+<body>
+  <div class="view">
+    <p class="inline">  Activer/désactiver viewer</p>
+    <button type="button" id="view" class="button active" name="button"></button>
+    <p class="inline">  Premier ou second plan</p>
+    <button type="button" id="index" class="button active" name="button"></button>
+  </div>
+  <script src="ws://localhost:8080/ws/lib/WebSocket.js"></script>
+  <script src="js/client.js"></script>
+</body>
+<footer></footer>
+</html>

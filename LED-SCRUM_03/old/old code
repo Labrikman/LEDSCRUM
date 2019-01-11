@@ -1,0 +1,331 @@
+
+// // Requête de Websocket au serveur
+// var WebSocketServer = require("ws").Server;
+// var ws = new WebSocketServer({port: 8080});
+// var CLIENTS = [];
+//
+// //Vérification de la connection au serveur
+// console.log("Serveur ON...");
+//
+// ws.onmessage = function(event) {
+//   var f = document.getElementById("chatbox").contentDocument;
+//   var text = "";
+//   var msg = JSON.parse(event.data);
+//   var time = new Date(msg.date);
+//   var timeStr = time.toLocaleTimeString();
+//
+//   switch(msg.type) {
+//     case "id":
+//       clientID = msg.id;
+//       setUsername();
+//       break;
+//     case "username":
+//       text = "<b>User <em>" + msg.name + "</em> signed in at " + timeStr + "</b><br>";
+//       break;
+//     case "message":
+//       text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
+//       break;
+//     case "rejectusername":
+//       text = "<b>Your username has been set to <em>" + msg.name + "</em> because the name you chose is in use.</b><br>"
+//       break;
+//     case "userlist":
+//       var ul = "";
+//       for (i=0; i < msg.users.length; i++) {
+//         ul += msg.users[i] + "<br>";
+//       }
+//       document.getElementById("userlistbox").innerHTML = ul;
+//       break;
+//   }
+//
+//   if (text.length) {
+//     f.write(text);
+//     document.getElementById("chatbox").contentWindow.scrollByPages(1);
+//   }
+// };
+//
+
+// //Connection et fonction WebSocket
+// wss.on('connection', function (ws) {
+//   CLIENTS.push(ws);
+//   console.log("Client en ligne...")
+//
+//   ws.on("message", function (message) {
+//     broadcast();
+//
+//   })
+//
+//   //Détection de la déconnection
+//   server.on("close", function() {
+//     CLIENTS.splice(CLIENTS.indexof(client), 1);
+//     console.log("Client hors ligne.");
+//   });
+//
+//
+//   server.on("errer", function() {
+//     CLIENTS.splice(CLIENTS.indexof(client), 1);
+//     console.log("Utilisateur hors ligne.");
+//   });
+//
+//
+//   function sendAll(data){
+//     for(var i = 0; i < CLIENTS.length; i++){
+//       if(CLIENTS[].readyState == CLIENTS[0].OPEN){
+//         CLIENTS[i].send(message);
+//       }
+//     }
+//
+//
+// });
+
+///////////////////////////
+
+//  //SWITCH CASE message ou image
+//  switch(ob.type) {
+//  case 'text':
+//      console.log("Received: " + ob.content)
+//      ws.send('{ "type":"text", "content":"Server ready."}')
+//      break;
+//  case 'image':
+//      console.log("Received: " + ob.content)
+//      console.log("Here is an apricot...")
+//      var path ="apricot.jpg";
+//      var data = '{ "type":"image", "path":"' + path + '"}';
+//      ws.send(data);
+//      break;
+//   }
+// })
+
+
+
+
+/////////////////////client
+
+
+
+// var connection = new WebSocket("ws://localhost:8080");
+//
+//
+// // Vérif connection web socket
+//  connection.onopen = function(e) {
+//    setTitle('Connexion on..' );
+//  };
+//
+//  connection.onclose = function(e) {
+//    setTitle('Connexion off..' );
+//  };
+//
+// //ciblage
+// var text = document.getElementById('message');
+// var clickage = document.getElementById('clickage');
+// var lire = document.getElementById("recv_message");
+//
+// // Envoi d'un texte à tous les utilisateurs à travers le serveur
+// function sendText() {
+//   // Création d'un objet msg qui contient les données
+//   // dont le serveur a besoin pour traiter le message
+//   var msg = {
+//     type: "message",
+//     text: document.getElementById("message").value,
+//     id:   clientID,
+//     date: Date.now()
+//   };
+//
+//   // Envoi de l'objet msg à travers une chaîne formatée en JSON
+//   connection.send(JSON.stringify(msg));
+//
+//   // Efface le texte de l'élément input
+//   // afin de recevoir la prochaine ligne de texte
+//   // que l'utilisateur va saisir
+//   document.getElementById("message").value = "";
+// }
+//
+// //Au ENTER envoyer message synchrone
+// text.addEventListener('keydown', function (e){
+//   let kc = e.which || e.keyCode;
+//
+//   if (kc === 13){
+//     send(text.value);
+//     // vide le texte
+//     text.value = "";
+//   }
+// });
+
+
+
+
+// //Récupération des données text
+// function dispMessage(str) {
+//  lire.innerHTML = str;
+// }
+
+// function send(data){
+//   if (connection.readyState === WebSocket.OPEN){
+//       connection.send(data);
+//     } else {
+//       throw 'Non connecté.';
+//     }
+// }
+
+// // Fonction traitement JSON et envoi
+//  ws.onmessage=function(event) {
+//     var message = JSON.parse(event.data);
+//     //Message
+//     dispMessage(message.content);
+//   };
+
+// Communication du websocket avec le serveur
+//ciblage
+
+
+
+//
+// //Gestion de l'envoi au click
+// clickage.addEventListener('click', function(){
+//     helloServer();
+// });
+
+
+
+
+
+
+
+
+  // //initialisation pour images à placer après connection
+  // var canvas;
+  // var context;
+  // var image = new Image();
+  // Fonction télécharger au chargement
+   // window.onload=function() {
+   //   canvas = document.getElementById("picture");
+   //   context = canvas.getContext("2d");
+   // }
+
+    // //SwITCH CASE Messge ou image
+    //   switch(message.type) {
+    //     case "text":
+    //        dispMessage(message.content);
+    //        break;
+    //     case "image":
+    //        var iname = message.path;
+    //        dispMessage("Received " + iname);
+    //        image.src= iname
+    //        image.onload = function () { context.drawImage(image, 0, 0); }
+    //        break;
+    //   }
+    // };
+
+
+
+    // var connection = new WebSocket("ws://localhost:8080");
+    //
+    //
+    // // Vérif connection web socket
+    //  connection.onopen = function(e) {
+    //    setTitle('Connexion on..' );
+    //  };
+    //
+    //  connection.onclose = function(e) {
+    //    setTitle('Connexion off..' );
+    //  };
+    //
+    // //ciblage
+    // var text = document.getElementById('message');
+    // var clickage = document.getElementById('clickage');
+    // var lire = document.getElementById("recv_message");
+    //
+    // // Envoi d'un texte à tous les utilisateurs à travers le serveur
+    // function sendText() {
+    //   // Création d'un objet msg qui contient les données
+    //   // dont le serveur a besoin pour traiter le message
+    //   var msg = {
+    //     type: "message",
+    //     text: document.getElementById("message").value,
+    //     id:   clientID,
+    //     date: Date.now()
+    //   };
+    //
+    //   // Envoi de l'objet msg à travers une chaîne formatée en JSON
+    //   connection.send(JSON.stringify(msg));
+    //
+    //   // Efface le texte de l'élément input
+    //   // afin de recevoir la prochaine ligne de texte
+    //   // que l'utilisateur va saisir
+    //   document.getElementById("message").value = "";
+    // }
+    //
+    // //Au ENTER envoyer message synchrone
+    // text.addEventListener('keydown', function (e){
+    //   let kc = e.which || e.keyCode;
+    //
+    //   if (kc === 13){
+    //     send(text.value);
+    //     // vide le texte
+    //     text.value = "";
+    //   }
+    // });
+
+
+
+
+    // //Récupération des données text
+    // function dispMessage(str) {
+    //  lire.innerHTML = str;
+    // }
+
+    // function send(data){
+    //   if (connection.readyState === WebSocket.OPEN){
+    //       connection.send(data);
+    //     } else {
+    //       throw 'Non connecté.';
+    //     }
+    // }
+
+    // // Fonction traitement JSON et envoi
+    //  ws.onmessage=function(event) {
+    //     var message = JSON.parse(event.data);
+    //     //Message
+    //     dispMessage(message.content);
+    //   };
+
+    // Communication du websocket avec le serveur
+    //ciblage
+
+
+
+    //
+    // //Gestion de l'envoi au click
+    // clickage.addEventListener('click', function(){
+    //     helloServer();
+    // });
+
+
+
+
+
+
+
+
+      // //initialisation pour images à placer après connection
+      // var canvas;
+      // var context;
+      // var image = new Image();
+      // Fonction télécharger au chargement
+       // window.onload=function() {
+       //   canvas = document.getElementById("picture");
+       //   context = canvas.getContext("2d");
+       // }
+
+        // //SwITCH CASE Messge ou image
+        //   switch(message.type) {
+        //     case "text":
+        //        dispMessage(message.content);
+        //        break;
+        //     case "image":
+        //        var iname = message.path;
+        //        dispMessage("Received " + iname);
+        //        image.src= iname
+        //        image.onload = function () { context.drawImage(image, 0, 0); }
+        //        break;
+        //   }
+        // };
